@@ -1,5 +1,8 @@
-FROM node:alpine
+FROM node:22-alpine
 MAINTAINER Charles Vallance <vallance.charles@gmail.com>
+
+# Upgrade Alpine packages to fix OpenSSL CVEs
+RUN apk upgrade --no-cache
 
 WORKDIR /opt/cvallance/mongo-k8s-sidecar
 
